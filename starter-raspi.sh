@@ -40,3 +40,5 @@ echo "[INFO] RasPi-Starter: Change default shell to Zsh"
 declare ZSH_PATH="$(which zsh)"
 chsh -s "${ZSH_PATH}"
 exec -l "${ZSH_PATH}"
+
+echo "[INFO] RasPi-Starter: Setup completed!"
