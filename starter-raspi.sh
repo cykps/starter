@@ -37,6 +37,6 @@ echo "[INFO] RasPi-Starter: Completed installing Neovim"
 
 ### Change default shell to Zsh
 echo "[INFO] RasPi-Starter: Change default shell to Zsh"
-declare ZSH_PATH="/opt/nvim-linux64/bin/zsh"
+declare ZSH_PATH="$(which zsh)"
 chsh -s "${ZSH_PATH}"
 exec -l "${ZSH_PATH}"
