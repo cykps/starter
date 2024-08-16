@@ -7,9 +7,9 @@ set -euo pipefail
 declare SCRIPT_DIR="$(cd "$(dirname "${0}")" && pwd)"
 declare REPO_ROOT="${SCRIPT_DIR}"
 
-echo "[INFO] RasPi-Starter: Install Zsh, Git with apt"
+echo "[INFO] RasPi-Starter: Install Zsh, Git, Snap with apt"
 sudo apt update
-sudo apt install -y zsh git
+sudo apt install -y zsh git snapd
 
 
 ### Setup Git
@@ -28,10 +28,7 @@ echo "[INFO] RasPi-Starter: Completed my dofiles setup"
 
 ### Install Neovim
 echo "[INFO] RasPi-Starter: Start installing Neovim"
-# https://github.com/neovim/neovim/blob/master/INSTALL.md
-curl -Lo /tmp/nvim-linux64.tar.gz https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-sudo tar -C /opt -xzf /tmp/nvim-linux64.tar.gz
-echo "export PATH=\"\$PATH:/opt/nvim-linux64/bin\"" >> "${HOME}/.config/zsh/local/path.zsh"
+bash -c "sudo snap install --beta nvim --classic"
 echo "[INFO] RasPi-Starter: Completed installing Neovim"
 
 
@@ -39,6 +36,6 @@ echo "[INFO] RasPi-Starter: Completed installing Neovim"
 echo "[INFO] RasPi-Starter: Change default shell to Zsh"
 declare ZSH_PATH="$(which zsh)"
 chsh -s "${ZSH_PATH}"
-exec -l "${ZSH_PATH}"
 
 echo "[INFO] RasPi-Starter: Setup completed!"
+exec -l "${ZSH_PATH}"
