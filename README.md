@@ -1,2 +1,8 @@
-# starter
-Setup system
+# Starter
+
+Scripts to setup system environment.
+
+### Raspberry Pi
+```
+./starter-raspi.sh
+```
