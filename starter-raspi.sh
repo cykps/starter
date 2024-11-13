@@ -7,9 +7,9 @@ set -euo pipefail
 declare SCRIPT_DIR="$(cd "$(dirname "${0}")" && pwd)"
 declare REPO_ROOT="${SCRIPT_DIR}"
 
-echo "[INFO] RasPi-Starter: Install Zsh, Git, Snap with apt"
+echo "[INFO] RasPi-Starter: Install Zsh, Git, Snap, GCC with apt"
 sudo apt update
-sudo apt install -y zsh git snapd
+sudo apt install -y zsh git snapd gcc
 
 
 ### Setup Git
